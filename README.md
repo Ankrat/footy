@@ -4,10 +4,10 @@
 ##User can reply from mail ( sms, inApp notification ?)
 
 
-  * No=>
+  * No:
     - No further action
 
-  * Yes=>
+  * Yes:
     - Generate fee report,
     - Generate list of players / teams
 
