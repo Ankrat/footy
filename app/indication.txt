@@ -1,0 +1,4 @@
+Home screen access:
+  -> Past Games ( master / detail view => list of past games / date/players/mom / score )
+  -> Coming Games ( RSVP )
+  -> My account ( pseudo/phone/email/balance/stats)
