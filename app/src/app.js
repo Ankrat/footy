@@ -1,5 +1,10 @@
 'use strict';
 
+var underscore = angular.module('underscore', []);
+underscore.factory('_', function() {
+  return window._; // assumes underscore has already been loaded on the page
+});
+
 // Declare app level module which depends on views, and components
 angular.module('footyApp', [
   'ngRoute',
@@ -12,7 +17,7 @@ config(['$routeProvider', function($routeProvider) {
     templateUrl: 'loginView/login.html',
     controller: 'LoginController'
   })
-  .when('/user', {
+  .when('/user/:pseudo', {
     templateUrl: 'userView/user.html',
     controller: 'UserController'
   })

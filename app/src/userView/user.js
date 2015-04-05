@@ -1,7 +1,11 @@
 'use strict';
 
-angular.module('footyApp.userView', ['ngRoute'])
-.controller('UserController', LoginController);
+angular.module('footyApp.userView', ['ngRoute', 'underscore'])
+.controller('UserController', UserController);
 
-function UserController($scope, $rootScope) {
+function UserController( $scope,
+                         $route,
+                         $routeParams
+                        ) {
+  $scope.params = $routeParams;
 };
