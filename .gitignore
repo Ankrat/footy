@@ -20,6 +20,11 @@ Thumbs.db
 ######################
 node_modules
 
+# Bower #
+# Component directory
+######################
+bower_components
+
 # Sublime Text #
 # Working Env settings
 ######################
