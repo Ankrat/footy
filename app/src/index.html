@@ -18,7 +18,7 @@
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
-<body>
+<body ng-controller="footyController">
 
   <nav>
     <ul class="menu">
@@ -28,6 +28,9 @@
     </ul>
   </nav>
 
+  <header>
+    <h1>logged : {{logged}} </h1>
+  </header>
 
   <div class="main-view" ng-view></div>
 
@@ -35,9 +38,7 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="view3/view3.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+  <script src="loginView/login.js"></script>
+  <script src="userView/user.js"></script>
 </body>
 </html>

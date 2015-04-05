@@ -3,23 +3,35 @@
 // Declare app level module which depends on views, and components
 angular.module('footyApp', [
   'ngRoute',
-  'footyApp.view1',
-  'footyApp.view2',
-  'footyApp.view3'
+  'footyApp.loginView',
+  'footyApp.userView'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider
-  .when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+  .when('/login', {
+    templateUrl: 'loginView/login.html',
+    controller: 'LoginController'
   })
-  .when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
+  .when('/user', {
+    templateUrl: 'userView/user.html',
+    controller: 'UserController'
   })
-  .when('/view3', {
-    templateUrl: 'view3/view3.html',
-    controller: 'View3Ctrl'
-  })
-  .otherwise({redirectTo: '/view1'});
+  .otherwise({redirectTo: '/login'});
+}]).
+factory('UserService', function(){
+  var logged = "false";
+  return {
+      isLogged: function () {
+          return logged;
+      },
+      setLogged: function(value) {
+          logged = value;
+      }
+  };
+}).
+controller('footyController', ['$scope', '$rootScope', 'UserService', function($scope, $rootScope, UserService) {
+  // App variable ?
+}]).
+run(['$rootScope', 'UserService', function($rootScope, UserService) {
+    $rootScope.logged = UserService.isLogged();
 }]);
